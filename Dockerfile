@@ -19,3 +19,6 @@ ENV PYTHONPATH=/app
 
 # Expose Streamlit and FastAPI ports
 EXPOSE 8000 8501
+
+# Default command to run the API (Required for Render)
+CMD uvicorn api.main:app --host 0.0.0.0 --port ${PORT:-8000}
